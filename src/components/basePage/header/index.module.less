@@ -1,0 +1,89 @@
+.pageHeader {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #fff;
+    border-bottom-color: #a7a7aa;
+
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .center {
+            position: absolute;
+            right: 80px;
+            left: 80px;
+            z-index: 1;
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            overflow: hidden;
+
+            .centerHeight {
+                flex: 1;
+                height: 100%;
+            }
+
+            .title {
+                font-size: 28px;
+                color: #333;
+            }
+        }
+
+        .right {
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            min-width: 10px;
+            height: 100%;
+            overflow: hidden;
+            align-self: flex-end;
+
+            .rightHeight {
+                width: 172px;
+                height: 100%;
+            }
+        }
+    }
+
+    .backImgWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+
+        .backImg {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.swiperItem {
+    height: 100%;
+    width: 750px;
+}
