@@ -1,0 +1,56 @@
+.pageWrapper {
+    background-color: antiquewhite;
+    flex-direction: column;
+
+    .imageWrapper {
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: flex-end;
+        margin-right: 50px;
+        // height: 500px;
+        background-color: cadetblue;
+    }
+
+    .pointWrapper {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border: 2px solid #000;
+        animation: center1 2s ease-in forwards;
+    }
+
+    .pointWrapperNotActive {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border: 2px solid #000;
+    }
+
+    .pointImage {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        animation: center2 2s ease-out forwards;
+    }
+
+    .targetArea {
+        margin-top: 300px;
+        background-color: aquamarine;
+    }
+
+    @keyframes center1 {
+        to {
+            transform: translateX(360px);
+        }
+
+    }
+
+    @keyframes center2 {
+        to {
+            transform: translateY(360px);
+        }
+    }
+}

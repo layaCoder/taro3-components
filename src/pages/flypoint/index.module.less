@@ -1,0 +1,65 @@
+.pageWrapper {
+    background-color: antiquewhite;
+    flex-direction: column;
+
+    .imageWrapper {
+
+        margin-right: 50px;
+        background-color: cadetblue;
+    }
+
+    .pointWrapper {
+        // display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border: 2px solid #000;
+        background-color: chartreuse;
+    }
+
+
+
+    .animation2 {
+        width: 50px;
+        height: 50px;
+        background-color: coral;
+    }
+
+    .pointWrapperActive {
+        transform: translateY(0px);
+    }
+
+    .pointWrapperNotActive {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border: 2px solid #000;
+    }
+
+    .pointImage {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        animation: center2 2s ease-out forwards;
+    }
+
+    .targetArea {
+        margin-top: 300px;
+        background-color: aquamarine;
+    }
+
+    @keyframes center1 {
+        to {
+            transform: translateX(360px);
+        }
+
+    }
+
+    @keyframes center2 {
+        to {
+            transform: translateY(360px);
+        }
+    }
+}
