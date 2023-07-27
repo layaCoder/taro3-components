@@ -2,7 +2,8 @@ import { ScrollView, View } from "@tarojs/components"
 import classNames from "classnames"
 import Header from "./header"
 import SwiperHeader from "./header/swiperHeader"
-import styles from "./index.module.less"
+import './index.less'
+// import styles from "./index.module.less"
 
 const BasePage = ({ 
   style, //page的style
@@ -48,7 +49,7 @@ const BasePage = ({
     disableScroll?:boolean
 }) => {
   // return <View style={style} className={className || styles.page_body}>
-  return <View style={style} className={classNames(styles.page_body, className)}>
+  return <View style={style} className={classNames('page_body', className)}>
     {/* 使用自定义header，需要在config中去除小程序原生header */}
     {useCustomHeader ? <Header 
       onCenterClick={headerLeftClick} 

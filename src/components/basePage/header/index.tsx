@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
-import styles from './index.module.less'
+import  './index.less'
 
 const Header = ({
   headerHeight = '100px',
@@ -64,20 +64,20 @@ const Header = ({
   }
 
   return (
-    <View className={styles.pageHeader} style={{ zIndex, backgroundColor }}>
+    <View className='pageHeader' style={{ zIndex, backgroundColor }}>
       <View style={{ width: '100%', height: headerHeight }} >
-        <View className={styles.content} style={{ height: headerHeight, width: '100%' }}>
+        <View className='content' style={{ height: headerHeight, width: '100%' }}>
           {renderLeft ? (
-            <View className={styles.left}>{renderLeft()}</View>
+            <View className='left'>{renderLeft()}</View>
           ) : (
-            <View className={styles.left} onClick={_onLeftClick}>
+            <View className='left' onClick={_onLeftClick}>
               <Image style={{ height: '20px', width: '20px' }} src={leftIcon} />
             </View>
           )}
-          <View className={styles.centerHeight} />
+          <View className='centerHeight' />
           {renderCenter ? (
             <View
-              className={styles.center}
+              className='center'
               onClick={_onCenterClick}
               style={{ justifyContent: textAlign }}
             >
@@ -85,21 +85,21 @@ const Header = ({
             </View>
           ) : (
             <View
-              className={styles.center}
+              className='center'
               onClick={_onCenterClick}
               style={{
                 justifyContent: textAlign
               }}
             >
               {!!title && (
-                <Text className={styles.title} style={{ color }}>
+                <Text className='title' style={{ color }}>
                   {title}
                 </Text>
               )}
             </View>
           )}
-          {renderRight && <View className={styles.right}>{renderRight()}</View>}
-          <View className={styles.rightHeight} style={{ width: `${rect.width + 10}px` }} />
+          {renderRight && <View className='right'>{renderRight()}</View>}
+          <View className='rightHeight' style={{ width: `${rect.width + 10}px` }} />
         </View>
       </View>
     </View>)

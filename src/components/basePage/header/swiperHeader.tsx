@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 import { View, Image, Swiper, SwiperItem } from '@tarojs/components'
-import styles from './index.module.less'
+import './index.less'
 // import iconBack from '../../../assets/navBack.png'
 
 const SwiperHeader = ({
@@ -28,12 +28,12 @@ const SwiperHeader = ({
     rect = { width: 82 }
   }
 
-  return <View className={styles.pageHeader} style={{ zIndex }}>
+  return <View className='pageHeader' style={{ zIndex }}>
     <View 
       style={{ position: 'fixed', top: rect.top }}
-      className={styles.backImgWrapper}
+      className='backImgWrapper'
     >
-      <Image className={styles.backImg} src={leftIcon} />
+      <Image className='backImg' src={leftIcon} />
     </View>
     <View style={{ width: '750rpx', height: headerHeight }} >
       <Swiper
@@ -46,7 +46,7 @@ const SwiperHeader = ({
       >
         {swiperData?.map((it, idx) => {
           return <SwiperItem key={idx + 1} >
-            <View className={styles.swiperItem} onClick={() => {
+            <View className='swiperItem' onClick={() => {
               // 
             }}
             >
