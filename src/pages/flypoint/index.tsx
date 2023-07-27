@@ -1,8 +1,8 @@
-import BasePage from "../../components/basePage"
 import { useState, useRef, useEffect } from "react"
 import { View, Image, Button } from "@tarojs/components"
 import Taro, { useReady } from '@tarojs/taro'
-import styles from './index.module.less'
+import BasePage from "../../components/basePage"
+import './index.less'
 
 const getDefAnimateStyle = () => ({
   transform: `scale(1)`,
@@ -69,10 +69,10 @@ const Index = () => {
   }, [])
  
   console.log(animationStyle, animationStyleY, 544)
-  return <BasePage className={styles.pageWrapper} >
+  return <BasePage className='pageWrapper' >
     <View>basePage test</View>
     <View 
-      className={styles.imageWrapper}
+      className='imageWrapper'
       // onClick={(e) => {
       //   setStartPosition({ x: e.detail.x, y: e.detail.y })
       //   setPlayAnimation(!playAnimation)
@@ -83,7 +83,7 @@ const Index = () => {
           <View 
           // @ts-ignore
             style={animationStyle} 
-            className={styles.pointWrapper}
+            className='pointWrapper'
           >
           </View>
         </View>
@@ -91,7 +91,7 @@ const Index = () => {
     </View>
     <View 
       id='targetDom' 
-      className={styles.targetArea}
+      className='targetArea'
     >TGT area</View>
     <Button
       onClick={() => {
