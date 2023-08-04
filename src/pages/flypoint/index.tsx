@@ -28,7 +28,7 @@ const Index = () => {
 
   const aniRef = useRef<any>(null)
 
-  const aniStart = ({ animate = true, duration = 2000, delay = 300 } = {}) => {
+  const aniControl = ({ animate = true, duration = 2000, delay = 300 } = {}) => {
     const aStyle = getDefAnimateStyle()
     if (animate) {
       const ams:string[] = []
@@ -36,18 +36,17 @@ const Index = () => {
       // @ts-ignore
       aStyle.transition = ams.join(',')
     }
-
     setAnimationStyle([
       { ...aStyle, top: '0', left: '0' },
       {
-        transform: `translateY(200px)`,
+        transform: `translateY(${tgtPosition.x}px)`,
         // @ts-ignore
-        transition: aStyle.transition ? `transform ${duration}ms cubic-bezier(0.58, 1.44, 0.94, 1.15)` : ''
+        transition: aStyle.transition ? `transform ${duration}ms cubic-bezier(0.21, -0.9, 0.7, 0.3)` : ''
       },
       {
-        transform: `translateX(200px)`,
+        transform: `translateX(${tgtPosition.y}px)`,
         // @ts-ignore
-        transition: aStyle.transition ? `transform ${duration}ms cubic-bezier(0.58, 1.44, 0.94, 1.15)` : ''
+        transition: aStyle.transition ? `transform ${duration}ms` : ''
       }
     ])
   }
@@ -65,6 +64,7 @@ const Index = () => {
     //监听动画结束
     aniRef.current?.addEventListener('transitionend', () => {
       console.log('animation end')
+      aniControl({ animate: false })
     }) 
   }, [])
  
@@ -73,10 +73,6 @@ const Index = () => {
     <View>basePage test</View>
     <View 
       className='imageWrapper'
-      // onClick={(e) => {
-      //   setStartPosition({ x: e.detail.x, y: e.detail.y })
-      //   setPlayAnimation(!playAnimation)
-      // }}
     >
       <View style={animationStyleX}>
         <View ref={aniRef} style={animationStyleY}>
@@ -95,7 +91,7 @@ const Index = () => {
     >TGT area</View>
     <Button
       onClick={() => {
-        aniStart()
+        aniControl({ animate: true, duration: 2000, delay: 300 })
       }}
     >start</Button>
   </BasePage>
