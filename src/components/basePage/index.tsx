@@ -2,6 +2,7 @@ import { ScrollView, View } from "@tarojs/components"
 import classNames from "classnames"
 import Header from "./header"
 import SwiperHeader from "./header/swiperHeader"
+import Footer from './footer'
 import './index.less'
 // import styles from "./index.module.less"
 
@@ -12,6 +13,7 @@ const BasePage = ({
   children,
   useCustomHeader = false,
   useSwiperHeader = false,
+  useCustomFooter = false,
   headerLeftClick,
   headerCenterClick,
   title,
@@ -24,6 +26,7 @@ const BasePage = ({
   headerTextColor,
   headerZindex,
   headerHeight,
+  renderFooter,
   swiperHeaderData,
   disableScroll = true
 }: {
@@ -33,6 +36,7 @@ const BasePage = ({
     children?: any
     useCustomHeader?:boolean
     useSwiperHeader?:boolean
+    useCustomFooter?:boolean
     headerLeftClick?:any
     headerCenterClick?:any
     title?:string
@@ -45,6 +49,7 @@ const BasePage = ({
     headerTextColor?:string
     headerZindex?:number
     headerHeight?:string
+    renderFooter?:any
     swiperHeaderData?:HeaderData.SwiperItem[]
     disableScroll?:boolean
 }) => {
@@ -71,8 +76,9 @@ const BasePage = ({
     </View> 
       : <ScrollView scrollY scrollWithAnimation className={contentClassName} lowerThreshold={20} upperThreshold={20} >
         {children}
-      </ScrollView>}
-   
+      </ScrollView>
+      }
+      {!useCustomFooter&&<Footer>{renderFooter}</Footer>}
   </View>
 }
 
